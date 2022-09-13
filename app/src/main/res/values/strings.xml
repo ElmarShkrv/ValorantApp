@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ValorantApp</string>
+    <string name="agents_title">Agents</string>
+    <string name="grid_item_test_text">Fade</string>
+    <string name="linear_item_test_text">Ascent</string>
+    <string name="weapons_item_test_text">Odin</string>
+    <string name="tiers_item_test_text">IRON 1</string>
+</resources>

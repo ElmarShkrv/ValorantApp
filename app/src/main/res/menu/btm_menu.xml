@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/agentsFragment"
+        android:icon="@drawable/ic_agents"
+        android:title="Agents" />
+
+    <item
+        android:id="@+id/mapsFragment"
+        android:icon="@drawable/ic_maps"
+        android:title="Maps" />
+
+    <item
+        android:id="@+id/weaponsFragment"
+        android:icon="@drawable/ic_weapons"
+        android:title="Weapons" />
+
+    <item
+        android:id="@+id/tiersFragment"
+        android:icon="@drawable/ic_tiers"
+        android:title="Tiers" />
+
+</menu>

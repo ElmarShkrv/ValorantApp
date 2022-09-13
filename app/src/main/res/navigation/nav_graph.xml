@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/agentsFragment">
+
+    <fragment
+        android:id="@+id/agentsFragment"
+        android:name="com.chiore.valorantapp.ui.fragments.agentsfragment.AgentsFragment"
+        android:label="AgentsFragment"
+        tools:layout="@layout/fragment_agents"/>
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.chiore.valorantapp.ui.fragments.mapsfragment.MapsFragment"
+        android:label="MapsFragment"
+        tools:layout="@layout/fragment_maps"/>
+    <fragment
+        android:id="@+id/weaponsFragment"
+        android:name="com.chiore.valorantapp.ui.fragments.weaponsfragment.WeaponsFragment"
+        android:label="WeaponsFragment"
+        tools:layout="@layout/fragment_weapons"/>
+    <fragment
+        android:id="@+id/tiersFragment"
+        android:name="com.chiore.valorantapp.ui.fragments.tiersfragment.TiersFragment"
+        android:label="TiersFragment"
+        tools:layout="@layout/fragment_tiers"/>
+</navigation>
