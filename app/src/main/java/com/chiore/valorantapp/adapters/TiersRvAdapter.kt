@@ -6,18 +6,16 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.chiore.valorantapp.data.remote.Data
-import com.chiore.valorantapp.data.remote.Tier
+import com.chiore.valorantapp.data.model.competitivetiers.TierDto
 import com.chiore.valorantapp.databinding.TiersGridItemBinding
-import com.chiore.valorantapp.databinding.WeaponsGridItemBinding
 
 class TiersRvAdapter() :
-    ListAdapter<Tier, TiersRvAdapter.TiersViewHolder>(DiffUtilCallBack()) {
+    ListAdapter<TierDto, TiersRvAdapter.TiersViewHolder>(DiffUtilCallBack()) {
 
     class TiersViewHolder(private val binding: TiersGridItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(tier: Tier) {
+        fun bind(tier: TierDto) {
             with(binding) {
                 Glide.with(root).load(tier.largeIcon).into(tiersItemIv)
                 tiersItemTv.text = tier.tierName
@@ -39,12 +37,12 @@ class TiersRvAdapter() :
         holder.bind(data)
     }
 
-    class DiffUtilCallBack : DiffUtil.ItemCallback<Tier>() {
-        override fun areItemsTheSame(oldItem: Tier, newItem: Tier): Boolean {
+    class DiffUtilCallBack : DiffUtil.ItemCallback<TierDto>() {
+        override fun areItemsTheSame(oldItem: TierDto, newItem: TierDto): Boolean {
             return oldItem.tierName == newItem.tierName
         }
 
-        override fun areContentsTheSame(oldItem: Tier, newItem: Tier): Boolean {
+        override fun areContentsTheSame(oldItem: TierDto, newItem: TierDto): Boolean {
             return oldItem == newItem
         }
 

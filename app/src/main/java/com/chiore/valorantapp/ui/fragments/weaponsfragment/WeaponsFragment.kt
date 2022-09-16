@@ -72,6 +72,7 @@ class WeaponsFragment : Fragment() {
                             Log.e(TAG, "An error occured: $message")
                         }
                     }
+                    else -> Unit
                 }
             }
         }

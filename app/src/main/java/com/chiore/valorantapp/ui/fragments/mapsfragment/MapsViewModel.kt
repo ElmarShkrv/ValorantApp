@@ -2,7 +2,7 @@ package com.chiore.valorantapp.ui.fragments.mapsfragment
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.chiore.valorantapp.data.remote.Data
+import com.chiore.valorantapp.data.model.maps.MapDto
 import com.chiore.valorantapp.repository.MapsRepository
 import com.chiore.valorantapp.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -16,8 +16,8 @@ class MapsViewModel @Inject constructor(
     private val repository: MapsRepository
 ): ViewModel() {
 
-    private val _allMaps = MutableStateFlow<Resource<List<Data>>>(Resource.Loading())
-    val allMaps: Flow<Resource<List<Data>>> = _allMaps
+    private val _allMaps = MutableStateFlow<Resource<List<MapDto>>>(Resource.Loading())
+    val allMaps: Flow<Resource<List<MapDto>>> = _allMaps
 
     fun allMaps() {
         viewModelScope.launch {

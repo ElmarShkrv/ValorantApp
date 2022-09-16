@@ -2,12 +2,14 @@ package com.chiore.valorantapp.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.chiore.valorantapp.data.remote.Data
+import com.chiore.valorantapp.data.model.agents.AgentDto
 import com.chiore.valorantapp.databinding.AgentsGridItemBinding
+import com.chiore.valorantapp.ui.fragments.agentsfragment.AgentsFragmentDirections
 import com.chiore.valorantapp.ui.fragments.agentsfragment.ListType
 
 const val GRID_LAYOUT = 0
@@ -15,7 +17,7 @@ const val LINEARLAYOUT = 1
 
 class AgentsRvAdapter(
     private var listType: ListType = ListType.GridLayout,
-) : ListAdapter<Data, RecyclerView.ViewHolder>(DiffUtilCallBack()) {
+) : ListAdapter<AgentDto, RecyclerView.ViewHolder>(DiffUtilCallBack()) {
 
     fun setListType(listType: ListType) {
         this.listType = listType
@@ -35,10 +37,17 @@ class AgentsRvAdapter(
             }
         }
 
-        fun bind(data: Data) {
+        fun bind(data: AgentDto) {
             with(binding) {
                 Glide.with(root).load(data.displayIcon).into(gridItemIv)
                 gridItemTv.text = data.displayName
+
+                itemView.setOnClickListener { view ->
+                    val directions = AgentsFragmentDirections
+                        .actionAgentsFragmentToAgentsDetailsFragment(data.uuid)
+                    Navigation.findNavController(view).navigate(directions)
+                }
+
             }
         }
 
@@ -71,12 +80,12 @@ class AgentsRvAdapter(
         }
     }
 
-    class DiffUtilCallBack : DiffUtil.ItemCallback<Data>() {
-        override fun areItemsTheSame(oldItem: Data, newItem: Data): Boolean {
+    class DiffUtilCallBack : DiffUtil.ItemCallback<AgentDto>() {
+        override fun areItemsTheSame(oldItem: AgentDto, newItem: AgentDto): Boolean {
             return oldItem.uuid == newItem.uuid
         }
 
-        override fun areContentsTheSame(oldItem: Data, newItem: Data): Boolean {
+        override fun areContentsTheSame(oldItem: AgentDto, newItem: AgentDto): Boolean {
             return oldItem == newItem
         }
 

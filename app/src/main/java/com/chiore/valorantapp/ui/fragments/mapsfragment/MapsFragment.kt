@@ -74,6 +74,7 @@ class MapsFragment : Fragment() {
                             Log.e(TAG, "An error occured: $message")
                         }
                     }
+                    else -> Unit
                 }
             }
         }

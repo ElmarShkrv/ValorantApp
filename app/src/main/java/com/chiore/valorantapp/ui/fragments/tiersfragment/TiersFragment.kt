@@ -57,9 +57,7 @@ class TiersFragment : Fragment() {
                     is Resource.Success -> {
                         //binding.shimmerLayout.visibility = View.GONE
                         response.data?.let { tiersResponse ->
-                            tiersResponse.map {
-                                tiersRvAdapter.submitList(it.tiers)
-                            }
+                            tiersRvAdapter.submitList(tiersResponse)
                         }
                     }
                     is Resource.Loading -> {
@@ -73,6 +71,7 @@ class TiersFragment : Fragment() {
                             Log.e(TAG, "An error occured: $message")
                         }
                     }
+                    else -> Unit
                 }
             }
         }

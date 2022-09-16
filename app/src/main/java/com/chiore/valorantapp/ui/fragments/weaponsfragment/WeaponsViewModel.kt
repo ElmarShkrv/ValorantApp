@@ -2,7 +2,7 @@ package com.chiore.valorantapp.ui.fragments.weaponsfragment
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.chiore.valorantapp.data.remote.Data
+import com.chiore.valorantapp.data.model.weapons.WeaponDto
 import com.chiore.valorantapp.repository.WeaponsRepository
 import com.chiore.valorantapp.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -16,8 +16,8 @@ class WeaponsViewModel @Inject constructor(
     private val repository: WeaponsRepository
 ): ViewModel() {
 
-    private val _allWeapons = MutableStateFlow<Resource<List<Data>>>(Resource.Loading())
-    val allWeapons: Flow<Resource<List<Data>>> = _allWeapons
+    private val _allWeapons = MutableStateFlow<Resource<List<WeaponDto>>>(Resource.Loading())
+    val allWeapons: Flow<Resource<List<WeaponDto>>> = _allWeapons
 
     fun allWeapons() {
         viewModelScope.launch {

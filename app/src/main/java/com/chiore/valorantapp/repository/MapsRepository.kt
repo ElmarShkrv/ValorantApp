@@ -1,7 +1,7 @@
 package com.chiore.valorantapp.repository
 
 import com.chiore.valorantapp.api.ValorantApi
-import com.chiore.valorantapp.data.remote.AgentsResult
+import com.chiore.valorantapp.data.model.maps.MapsResponse
 import com.chiore.valorantapp.util.Resource
 import javax.inject.Inject
 
@@ -9,7 +9,7 @@ import javax.inject.Inject
 class MapsRepository @Inject constructor(
     private val valorantApi: ValorantApi,
 ) {
-    suspend fun allMaps(): Resource<AgentsResult> {
+    suspend fun allMaps(): Resource<MapsResponse> {
         return try {
             val response = valorantApi.getMaps()
             if (response.isSuccessful) {

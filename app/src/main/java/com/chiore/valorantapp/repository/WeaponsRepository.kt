@@ -1,14 +1,14 @@
 package com.chiore.valorantapp.repository
 
 import com.chiore.valorantapp.api.ValorantApi
-import com.chiore.valorantapp.data.remote.AgentsResult
+import com.chiore.valorantapp.data.model.weapons.WeaponsResponse
 import com.chiore.valorantapp.util.Resource
 import javax.inject.Inject
 
 class WeaponsRepository @Inject constructor(
     private val valorantApi: ValorantApi
 ) {
-    suspend fun allWeapons(): Resource<AgentsResult> {
+    suspend fun allWeapons(): Resource<WeaponsResponse> {
         return try {
             val response = valorantApi.getWeapons()
             if (response.isSuccessful) {

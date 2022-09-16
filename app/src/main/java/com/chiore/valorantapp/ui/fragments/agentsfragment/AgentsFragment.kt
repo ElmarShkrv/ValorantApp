@@ -6,20 +6,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.core.graphics.rotationMatrix
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.chiore.valorantapp.R
 import com.chiore.valorantapp.adapters.AgentsRvAdapter
 import com.chiore.valorantapp.databinding.FragmentAgentsBinding
-import com.chiore.valorantapp.util.CalculateWindowSize
 import com.chiore.valorantapp.util.Resource
-import com.chiore.valorantapp.util.WindowSizeClass
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
@@ -117,6 +116,7 @@ class AgentsFragment : Fragment() {
                             Log.e(TAG, "An error occured: $message")
                         }
                     }
+                    else -> Unit
                 }
             }
         }

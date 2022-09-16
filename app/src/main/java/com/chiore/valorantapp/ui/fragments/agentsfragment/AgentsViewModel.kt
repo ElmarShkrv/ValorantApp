@@ -2,7 +2,7 @@ package com.chiore.valorantapp.ui.fragments.agentsfragment
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.chiore.valorantapp.data.remote.Data
+import com.chiore.valorantapp.data.model.agents.AgentDto
 import com.chiore.valorantapp.repository.AgentsRepository
 import com.chiore.valorantapp.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -17,8 +17,8 @@ class AgentsViewModel @Inject constructor(
     private val repository: AgentsRepository
 ): ViewModel() {
 
-    private val _allAgents = MutableStateFlow<Resource<List<Data>>>(Resource.Loading())
-    val allAgents: Flow<Resource<List<Data>>> = _allAgents
+    private val _allAgents = MutableStateFlow<Resource<List<AgentDto>>>(Resource.Loading())
+    val allAgents: Flow<Resource<List<AgentDto>>> = _allAgents
 
     fun allAgents() {
         viewModelScope.launch {

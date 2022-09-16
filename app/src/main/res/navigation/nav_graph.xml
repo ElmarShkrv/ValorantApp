@@ -9,12 +9,20 @@
         android:id="@+id/agentsFragment"
         android:name="com.chiore.valorantapp.ui.fragments.agentsfragment.AgentsFragment"
         android:label="AgentsFragment"
-        tools:layout="@layout/fragment_agents"/>
+        tools:layout="@layout/fragment_agents">
+        <action
+            android:id="@+id/action_agentsFragment_to_agentsDetailsFragment"
+            app:destination="@id/agentsDetailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/mapsFragment"
         android:name="com.chiore.valorantapp.ui.fragments.mapsfragment.MapsFragment"
         android:label="MapsFragment"
-        tools:layout="@layout/fragment_maps"/>
+        tools:layout="@layout/fragment_maps">
+        <action
+            android:id="@+id/action_mapsFragment_to_mapsDetailsFragment"
+            app:destination="@id/mapsDetailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/weaponsFragment"
         android:name="com.chiore.valorantapp.ui.fragments.weaponsfragment.WeaponsFragment"
@@ -25,4 +33,22 @@
         android:name="com.chiore.valorantapp.ui.fragments.tiersfragment.TiersFragment"
         android:label="TiersFragment"
         tools:layout="@layout/fragment_tiers"/>
+    <fragment
+        android:id="@+id/agentsDetailsFragment"
+        android:name="com.chiore.valorantapp.ui.fragments.agentsfragment.agentsdetails.AgentsDetailsFragment"
+        android:label="AgentsDetailsFragment"
+        tools:layout="@layout/fragment_agents_details">
+        <argument
+            android:name="agentId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapsDetailsFragment"
+        android:name="com.chiore.valorantapp.ui.fragments.mapsfragment.mapsdetails.MapsDetailsFragment"
+        android:label="MapsDetailsFragment"
+        tools:layout="@layout/fragment_maps_details">
+        <argument
+            android:name="mapsId"
+            app:argType="string" />
+    </fragment>
 </navigation>
