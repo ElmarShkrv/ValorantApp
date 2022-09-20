@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/weaponDetailsIv"
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:layout_margin="8dp"
+                android:background="@color/secondary"
+                android:src="@color/secondary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/ImageViewCorner" />
+
+            <TextView
+                android:id="@+id/weaponDetailsNameTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gilroy_extra_blod"
+                android:text="@string/weapon_test_name"
+                android:textAlignment="center"
+                android:textColor="@color/background"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@+id/weaponDetailsCategoryTv"
+                app:layout_constraintEnd_toEndOf="@+id/weaponDetailsCategoryTv"
+                app:layout_constraintStart_toStartOf="@+id/weaponDetailsCategoryTv" />
+
+            <TextView
+                android:id="@+id/weaponDetailsCategoryTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:fontFamily="@font/gilroy_extra_blod"
+                android:text="@string/weapon_test_category_name"
+                android:textAlignment="center"
+                android:textColor="@color/background"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="@+id/weaponDetailsIv"
+                app:layout_constraintEnd_toEndOf="@+id/weaponDetailsIv"
+                app:layout_constraintStart_toStartOf="@+id/weaponDetailsIv" />
+
+            <TextView
+                android:id="@+id/topWeaponDetailsTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:fontFamily="@font/gilroy_extra_blod"
+                android:text="@string/damage_range"
+                android:textAlignment="center"
+                android:textColor="@color/secondary"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/weaponDetailsIv" />
+
+            <TextView
+                android:id="@+id/weaponDetailsHeadDamageTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/test_head_damage"
+                android:fontFamily="@font/gilroy_extra_blod"
+                android:textAlignment="center"
+                android:textColor="@color/secondary"
+                android:textSize="16sp"
+                android:layout_margin="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/topWeaponDetailsTv" />
+
+            <ProgressBar
+                android:id="@+id/headProgressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="300dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="4dp"
+                android:progress="24"
+                android:scaleY="4"
+                android:theme="@style/ProgressBarStyle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/weaponDetailsHeadDamageTv" />
+
+            <TextView
+                android:id="@+id/weaponDetailsBodyDamageTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/test_body_damage"
+                android:fontFamily="@font/gilroy_extra_blod"
+                android:textAlignment="center"
+                android:textColor="@color/secondary"
+                android:textSize="16sp"
+                android:layout_margin="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/headProgressBar" />
+
+            <ProgressBar
+                android:id="@+id/bodyProgressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="300dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="4dp"
+                android:progress="24"
+                android:scaleY="4"
+                android:theme="@style/ProgressBarStyle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/weaponDetailsBodyDamageTv" />
+
+            <TextView
+                android:id="@+id/weaponDetailsLegDamageTv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/test_leg_damage"
+                android:fontFamily="@font/gilroy_extra_blod"
+                android:textAlignment="center"
+                android:textColor="@color/secondary"
+                android:textSize="16sp"
+                android:layout_margin="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bodyProgressBar" />
+
+            <ProgressBar
+                android:id="@+id/legProgressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="300dp"
+                android:layout_height="20dp"
+                android:scaleY="4"
+                android:layout_marginTop="4dp"
+                android:progress="24"
+                android:theme="@style/ProgressBarStyle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/weaponDetailsLegDamageTv" />
+
+            <TextView
+                android:id="@+id/topWeaponSkinsTv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp"
+                android:fontFamily="@font/gilroy_extra_blod"
+                android:text="@string/skins"
+                android:textAlignment="center"
+                android:textColor="@color/secondary"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/legProgressBar" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/weaponDetailsSkinRv"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/topWeaponSkinsTv"
+                android:layout_margin="16dp"
+                tools:listitem="@layout/weapon_details_skins_item"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:orientation="horizontal"
+                tools:itemCount="5"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

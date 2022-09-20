@@ -10,4 +10,12 @@
     <string name="agents_details_test_role">Initiator</string>
     <string name="maps_details_test_cordinat">45°26\'BF\'N,12°20\'Q\'E</string>
     <string name="ability_description">EQUIP a knot of raw fear. FIRE to throw. The knot drops down after a set time. RE-USE to drop the knot early. The knot ruptures on impact, holding nearby enemies in place. Held enemies are deafened, and decayed.</string>
+    <string name="weapon_test_name">Odin</string>
+    <string name="weapon_test_category_name">Rifles</string>
+    <string name="damage_range">Damage Range</string>
+    <string name="test_head_damage">Head - 160.0</string>
+    <string name="test_body_damage">Body - 40</string>
+    <string name="test_leg_damage">Leg - 34.0</string>
+    <string name="skins">Skins</string>
+    <string name="weapon_skin_displayName">Sentinels of Light Vandal</string>
 </resources>

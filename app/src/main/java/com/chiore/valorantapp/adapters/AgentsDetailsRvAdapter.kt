@@ -15,18 +15,16 @@ import com.chiore.valorantapp.databinding.AgentsDetailsItemBinding
 class AgentsDetailsRvAdapter() :
     ListAdapter<Ability, AgentsDetailsRvAdapter.AgentDetailsViewHolder>(DiffUtilCallBack()) {
 
-    class AgentDetailsViewHolder(private val binding: AgentsDetailsItemBinding) :
+    class AgentDetailsViewHolder(val binding: AgentsDetailsItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        val constrainLayout : ConstraintLayout = itemView.findViewById(R.id.expandableLayout)
-
-            fun bind(ability: Ability) {
-                with(binding) {
-                    Glide.with(root).load(ability.displayIcon).into(agentsDetailsAbilityIv)
-                    agentsDetailsAbilityNameTv.text = ability.displayName
-                    agentsDetailsAbilityDescription.text = ability.description
-                }
+        fun bind(ability: Ability) {
+            with(binding) {
+                Glide.with(root).load(ability.displayIcon).into(agentsDetailsAbilityIv)
+                agentsDetailsAbilityNameTv.text = ability.displayName
+                agentsDetailsAbilityDescription.text = ability.description
             }
+        }
 
     }
 
@@ -42,8 +40,8 @@ class AgentsDetailsRvAdapter() :
         val data = getItem(position)
         holder.bind(data)
 
-        val isVisible : Boolean = data.visibility
-        holder.constrainLayout.visibility = if (isVisible) View.VISIBLE else View.GONE
+        val isVisible: Boolean = data.visibility
+        holder.binding.expandableLayout.visibility = if (isVisible) View.VISIBLE else View.GONE
 
         holder.itemView.setOnClickListener {
             data.visibility = !data.visibility

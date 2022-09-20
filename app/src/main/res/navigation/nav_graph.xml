@@ -27,7 +27,11 @@
         android:id="@+id/weaponsFragment"
         android:name="com.chiore.valorantapp.ui.fragments.weaponsfragment.WeaponsFragment"
         android:label="WeaponsFragment"
-        tools:layout="@layout/fragment_weapons"/>
+        tools:layout="@layout/fragment_weapons">
+        <action
+            android:id="@+id/action_weaponsFragment_to_weaponDetailsFragment"
+            app:destination="@id/weaponDetailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/tiersFragment"
         android:name="com.chiore.valorantapp.ui.fragments.tiersfragment.TiersFragment"
@@ -49,6 +53,15 @@
         tools:layout="@layout/fragment_maps_details">
         <argument
             android:name="mapsId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/weaponDetailsFragment"
+        android:name="com.chiore.valorantapp.ui.fragments.weaponsfragment.weaponsdetails.WeaponDetailsFragment"
+        android:label="WeaponDetailsFragment"
+        tools:layout="@layout/fragment_weapon_details">
+        <argument
+            android:name="weaponId"
             app:argType="string" />
     </fragment>
 </navigation>

@@ -2,12 +2,14 @@ package com.chiore.valorantapp.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.chiore.valorantapp.data.model.weapons.WeaponDto
 import com.chiore.valorantapp.databinding.WeaponsGridItemBinding
+import com.chiore.valorantapp.ui.fragments.weaponsfragment.WeaponsFragmentDirections
 
 class WeaponsRvAdapter() :
     ListAdapter<WeaponDto, WeaponsRvAdapter.WeaponsViewHolder>(DiffUtilCallBack()) {
@@ -19,6 +21,13 @@ class WeaponsRvAdapter() :
             with(binding) {
                 Glide.with(root).load(data.displayIcon).into(weaponsItemIv)
                 weaponsItemTv.text = data.displayName
+
+                itemView.setOnClickListener { view ->
+                    val directions = WeaponsFragmentDirections
+                        .actionWeaponsFragmentToWeaponDetailsFragment(data.uuid)
+                    Navigation.findNavController(view).navigate(directions)
+                }
+
             }
         }
 

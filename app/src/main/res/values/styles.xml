@@ -5,4 +5,9 @@
         <item name="cornerSizeBottomLeft">24dp</item>
         <item name="cornerSizeBottomRight">24dp</item>
     </style>
+
+    <style name="ProgressBarStyle">
+        <item name="colorAccent">@color/secondary</item>
+    </style>
+
 </resources>

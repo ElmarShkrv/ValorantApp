@@ -19,6 +19,7 @@ data class Skin(
     val themeUuid: String,
     @SerializedName("uuid")
     val uuid: String,
+    var visibility: Boolean = false,
     @SerializedName("wallpaper")
     val wallpaper: Any
 )

@@ -5,6 +5,7 @@ import com.chiore.valorantapp.data.model.agents.AgentResponse
 import com.chiore.valorantapp.data.model.competitivetiers.CompetitiveTiersResponse
 import com.chiore.valorantapp.data.model.maps.MapDetailResponse
 import com.chiore.valorantapp.data.model.maps.MapsResponse
+import com.chiore.valorantapp.data.model.weapons.WeaponDetailResponse
 import com.chiore.valorantapp.data.model.weapons.WeaponsResponse
 import retrofit2.Response
 import retrofit2.http.GET
@@ -30,6 +31,11 @@ interface ValorantApi {
 
     @GET("v1/weapons")
     suspend fun getWeapons(): Response<WeaponsResponse>
+
+    @GET("v1/weapons/{weaponUuid}")
+    suspend fun getWeaponByUuid(
+        @Path("weaponUuid") weaponUuid: String
+    ): Response<WeaponDetailResponse>
 
     @GET("v1/competitivetiers")
     suspend fun getTiers(): Response<CompetitiveTiersResponse>
