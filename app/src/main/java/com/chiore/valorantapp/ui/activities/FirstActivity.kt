@@ -18,7 +18,7 @@ class FirstActivity : AppCompatActivity() {
         setContentView(view)
 
         lifecycleScope.launchWhenCreated {
-            delay(1_200)
+            delay(1_000)
             val intent = Intent(
                 this@FirstActivity,
                 MainActivity::class.java

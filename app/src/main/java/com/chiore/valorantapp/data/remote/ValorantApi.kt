@@ -1,4 +1,4 @@
-package com.chiore.valorantapp.api
+package com.chiore.valorantapp.data.remote
 
 import com.chiore.valorantapp.data.model.agents.AgentDetailResponse
 import com.chiore.valorantapp.data.model.agents.AgentResponse

@@ -71,23 +71,6 @@ class AgentsDetailsFragment : Fragment() {
                                 descriptionTv.text = detailsResponse.description
 
                                 agentsDetailsRvAdapter.submitList(detailsResponse.abilities)
-
-                                /*
-                                data.abilities.map { ability ->
-                                    Glide.with(requireView()).load(ability.displayIcon)
-                                        .into(ability1)
-
-                                    Glide.with(requireView()).load(ability.displayIcon)
-                                        .into(ability2)
-
-                                    Glide.with(requireView()).load(ability.displayIcon)
-                                        .into(ability3)
-
-                                    Glide.with(requireView()).load(ability.displayIcon)
-                                        .into(ability4)
-                                }
-
-                                 */
                             }
                         }
                     }

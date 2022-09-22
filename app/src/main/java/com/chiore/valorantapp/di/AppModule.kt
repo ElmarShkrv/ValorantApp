@@ -1,6 +1,6 @@
 package com.chiore.valorantapp.di
 
-import com.chiore.valorantapp.api.ValorantApi
+import com.chiore.valorantapp.data.remote.ValorantApi
 import com.chiore.valorantapp.util.Constants.Companion.BASE_URL
 import dagger.Module
 import dagger.Provides

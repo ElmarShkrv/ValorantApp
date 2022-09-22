@@ -1,6 +1,6 @@
 package com.chiore.valorantapp.repository
 
-import com.chiore.valorantapp.api.ValorantApi
+import com.chiore.valorantapp.data.remote.ValorantApi
 import com.chiore.valorantapp.data.model.agents.AgentResponse
 import com.chiore.valorantapp.util.Resource
 import javax.inject.Inject
