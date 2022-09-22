@@ -43,3 +43,8 @@ Valorant Guide is a sample Android application using [Valorant API](https://valo
 | Tier |
 | ---- |
 |<img src="https://user-images.githubusercontent.com/105628110/191684018-a5919536-96ef-4824-9541-6d90be7707e6.jpg" width="250" height="500"/>|
+
+
+
+UI idea from [cnrture](https://github.com/cnrture/Valorant-Compose-App)
+
