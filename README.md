@@ -2,7 +2,7 @@
 Valorant Guide is a sample Android application using [Valorant API](https://valorant-api.com/)
 
 ## Project Features 🛠️
- - MVVM with Clean Architecture
+ - MVVM
  - Flow
  - Navigation Components
  - Hilt for Dependency Injection
